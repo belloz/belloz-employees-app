@@ -6,12 +6,51 @@ from django.db.models import Q
 from datetime import datetime
 # Login required
 from django.contrib.auth.decorators import login_required
+import requests
 # Create your views here.
 
 
 @login_required
 def index(request):
-    return render(request, 'employees_app/index.html', {'nbar': 'home'})
+    API_KEY = "ecf5c3a62cc31e420d6feab7977329e8"
+    API_KEY2 = "f33f5bb7d81312b303c2c4c3df4ab2bb"  # just in case for second, quick request (reserve)
+    url = "http://api.openweathermap.org/data/2.5/weather"  # /forecast endpoint is for couple days!
+    CITY = "Toronto"
+    CITY_ID = 6167865  # Toronto (IDs are more accurate...)
+
+    payload = {"APPID": API_KEY, "id": CITY_ID}
+    r = requests.get(url, params=payload)
+
+    json_obj = r.json()
+
+    # Call to json parameters (temp, wind, population, city name, etc):
+    temp_kelvin = json_obj["main"]["temp"]  # Temp
+    temp_celc = temp_kelvin - 273.15  # conversion from Kelvin to Celcius/Celsius
+    temp_celc = "%.1f %sC" % (temp_celc, chr(176))  # show 1 digit after comma
+    # weather cloudy, sunny etc:
+    weather_type = json_obj["weather"][0]["main"]
+    weather_type_desc = json_obj["weather"][0]["description"]
+    weather_icon = json_obj["weather"][0]["icon"]
+
+    wind = json_obj["wind"]["speed"]  # Wind Speed
+    wind_deg = json_obj["wind"]["deg"]  # Wind Degree
+    wind = "%.1f km/h" % wind
+
+    humidity = json_obj["main"]["humidity"]
+
+    dictionary = {
+        'nbar': 'home',
+        'CITY': CITY,
+        'weather_type': weather_type,
+        'temp_celc': temp_celc,
+        'weather_type_desc': weather_type_desc,
+        'wind': wind,
+        'wind_deg': wind_deg,
+        'humidity': humidity,
+        'weather_icon': weather_icon,
+    }
+
+    return render(request, 'employees_app/index.html', dictionary)
 
 
 @login_required

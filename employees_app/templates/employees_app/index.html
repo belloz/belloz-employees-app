@@ -11,5 +11,16 @@
     <a href="https://www.mandrroofing.ca/freeQuote/" target="_blank" class="btn btn-outline-primary">M&R Free Quote</a>
     <a href="http://www.app.mandrroofing.ca/" target="_blank" class="btn btn-outline-primary">M&R Auto-Estimations</a>
 
-
+    <br><br><br>
+    <p class="lead">Weather API <i class="fab fa-mixcloud text-primary"></i></p>
+    <a href="https://weather.com/en-CA/weather/today/l/43.65,-79.38" target="_blank" class="btn btn-outline-primary btn-lg">
+    Weather for {{ CITY }}:
+    <br>
+    <img src="http://openweathermap.org/img/w/{{ weather_icon }}.png"/>
+    <br>
+    {{ weather_type }} - {{ weather_type_desc }}  <br>
+    Temp: {{ temp_celc }}<br>
+    Wind: {{ wind }}<br>
+    Humidity: {{ humidity }} %
+    </a>
 {% endblock %}
