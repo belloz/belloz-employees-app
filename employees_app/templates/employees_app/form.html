@@ -3,61 +3,92 @@
 							<!-- Last name: -->
 							<div class="col-sm-6 pb-3">
 								<label>Last Name</label>
-                                {{ form.last_name }}
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="far fa-user"></i></div>
+                                    {{ form.last_name }}
+                                </div>
 							</div>
 
 							<!-- First name: -->
 							<div class="col-sm-6 pb-3">
-								<label>First Name</label><br>
-								{{ form.first_name }}
+								<label>First Name</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="far fa-user"></i></div>
+								    {{ form.first_name }}
+                                </div>
 							</div>
 
                             <!-- E-mail: -->
 							<div class="col-sm-3 pb-3">
 								<label>E-mail <i class="far fa-caret-square-down text-primary"></i></label>
+
+                                <div class="input-group">
+                                    <div class="input-group-addon">@</div>
                                 {{ form.email }}
+                                </div>
 							</div>
 
                             <!-- B-day: -->
 							<div class="col-sm-3 pb-3">
 								<label>Date fo birth</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
                                 {{ form.date_of_birth }}
+                                </div>
 							</div>
 
 							<!-- Address: -->
 							<div class="col-sm-6 pb-3">
 								<label>Street / Apt</label>
-                                {{ form.address }}
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="far fa-building"></i></div>
+                                    {{ form.address }}
+                                </div>
 							</div>
 
 							<!-- Address #2 State: -->
 							<div class="col-sm-3 pb-3">
 								<label>State</label>
-								{{ form.state }}
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="far fa-building"></i></div>
+								    {{ form.state }}
+                                </div>
 							</div>
 
 							<!-- Address #3 Postal Code: -->
 							<div class="col-sm-3 pb-3">
 								<label>Postal Code</label>
-                                {{ form.postal_code }}
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="far fa-building"></i></div>
+                                    {{ form.postal_code }}
+                                </div>
 							</div>
 
 							<!-- Address #4 City: -->
 							<div class="col-sm-3 pb-3">
 								<label>City</label>
-                                {{ form.city }}
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="far fa-building"></i></div>
+                                    {{ form.city }}
+                                </div>
 							</div>
 
 							<!-- Phone number: -->
 							<div class="col-sm-3 pb-3">
 								<label>Phone number</label>
-                                {{ form.phone_number }}
+                                <div class="input-group">
+									<div class="input-group-addon"><i class="fas fa-mobile-alt"></i></div>
+                                    {{ form.phone_number }}
+                                </div>
 							</div>
 
                             <!-- Position: -->
 							<div class="col-sm-3 pb-3">
 								<label>Position</label>
-							    {{ form.position }}
+                                <div class="input-group">
+									<div class="input-group-addon"><i class="fas fa-user"></i></div>
+							            {{ form.position }}
+                                </div>
                             </div>
 
 							<!-- Salary / Wage: -->
@@ -72,37 +103,54 @@
 							<!-- Datepicker Employed from -->
 							<div class="col-sm-3 pb-3">
 								<label>Employed From</label>
-							    {{ form.employed_from }}
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
+							        {{ form.employed_from }}
+                                </div>
                             </div>
 
                             <!-- Datepicker Employed Until -->
 							<div class="col-sm-3 pb-3">
 								<label>Employed Until <i class="far fa-caret-square-down text-primary"></i></label>
-                                {{ form.employed_until }}
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
+                                    {{ form.employed_until }}
+                                </div>
 							</div>
 
 							<!-- SIN: -->
 							<div class="col-sm-4 pb-3">
 								<label>Social Insurance Number (SIN) # <i class="far fa-caret-square-down text-primary"></i></label>
-                                {{ form.sin }}
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="far fa-id-card"></i></div>
+                                    {{ form.sin }}
+                                </div>
 							</div>
 
 							<!-- WSIB: -->
 							<div class="col-sm-4 pb-3">
 								<label>WSIB # <i class="far fa-caret-square-down text-primary"></i></label>
-                                {{ form.wsib }}
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="far fa-id-card"></i></div>
+                                    {{ form.wsib }}
+                                </div>
 							</div>
 
 							<!-- Driver Lic No.: -->
 							<div class="col-sm-4 pb-3">
 								<label>Driver Lic No. # <i class="far fa-caret-square-down text-primary"></i></label>
-                                {{ form.driver_lic }}
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="far fa-id-card"></i></div>
+                                    {{ form.driver_lic }}
+                                </div>
 							</div>
+
 							<!-- Immigration Status: -->
 							<div class="col-sm-3 pb-3">
 								<label>Immigration Status</label>
 								{{ form.status }}
 							</div>
+
 							<!-- Clothes Size: -->
 							<div class="col-sm-2 pb-3">
 								<label>Clothes Size</label>
